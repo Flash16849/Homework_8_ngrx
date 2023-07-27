@@ -1,0 +1,18 @@
+<form [formGroup]="myForm">
+  <label for="name">Name: </label>
+  <input type="text" [formControl]="name">
+
+  <label for="price">Price: </label>
+  <input type="number" [formControl]="price">
+  
+  <label for="quantity">Quantity: </label>
+  <input type="number" [formControl]="quantity">
+  
+  <label for="img">ImgURL: </label>
+  <input type="string" [formControl]="img">
+  
+  <label for="description">Description: </label>
+  <textarea type="string" [formControl]="description"></textarea>
+  
+  <button type="submit" (click)="submit()">Xác nhận</button>
+</form>

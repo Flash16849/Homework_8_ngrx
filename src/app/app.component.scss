@@ -1,0 +1,11 @@
+.container {
+    background-color: red;
+    background-image: linear-gradient(to right, #d7bfd4 , #a9acd2);
+}
+.box-list{
+    padding: 3%;
+    display: flex;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
