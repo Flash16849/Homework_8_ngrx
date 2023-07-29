@@ -1,0 +1,14 @@
+<div class="container">
+  
+<button (click)="backToHome()">Back</button>
+    
+  
+    <app-login-form></app-login-form>
+    <button>check data</button>
+  
+  
+    <div class="box-list">
+      <app-item-card *ngFor="let item of this.cartService.listItem" [item] = "item"></app-item-card>
+    </div>
+  
+  </div>

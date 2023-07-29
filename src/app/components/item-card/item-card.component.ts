@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Item } from 'src/app/models/item.model';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-item-card',
@@ -7,13 +8,9 @@ import { Item } from 'src/app/models/item.model';
   styleUrls: ['./item-card.component.scss']
 })
 export class ItemCardComponent{
-  @Input() item!: Item;;
-  @Output() cart = new EventEmitter();
+  constructor(public cartService: CartService) { }
+  @Input()
 
-  tenne() {
-    this.cart.emit();
-    alert("Đã thêm vào giỏ hàng");
-  }
-  
+  item!: Item;
   
 }

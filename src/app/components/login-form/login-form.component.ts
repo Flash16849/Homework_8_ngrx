@@ -1,6 +1,7 @@
 import { Component, Input} from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
 import { Item } from 'src/app/models/item.model';
+import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -8,11 +9,10 @@ import { Item } from 'src/app/models/item.model';
 })
 export class LoginFormComponent {
 
-  @Input()
+  // listItem: Item[] = [];
 
-  listItem: Item[] = [];
-
-  constructor() {
+  constructor(public cartService: CartService) {
+    
     this.myForm.addControl('name',this.name);
     this.myForm.addControl('price',this.price);
     this.myForm.addControl('quantity',this.quantity);
@@ -34,8 +34,8 @@ export class LoginFormComponent {
       img: this.img.value,
       description: this.description.value
     }
-    this.listItem.push(newItem);
-    console.log(this.listItem);
+    this.cartService.listItem.push(newItem);
+    console.log(this.cartService.listItem);
     
   }
 }
