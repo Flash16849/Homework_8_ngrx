@@ -11,7 +11,5 @@ export class ShoppingCartComponent {
 
   constructor(public router: Router,public cartService: CartService){}
 
-  backToHome(){
-    this.router.navigate([''])
-  }
+  
 }

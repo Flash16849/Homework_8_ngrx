@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Item } from './models/item.model';
 import { CartService } from './services/cart.service';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'firstProject';
 
-  constructor(public cartService: CartService, public router: Router) {
+  constructor(public cartService: CartService) {
     this.cartService.showData();
   }
 
@@ -19,9 +19,7 @@ export class AppComponent {
 
   
 
-  navigateToShoppingCart() {
-    this.router.navigate(['/shopping-cart'])
-  }
+  
 
  
 

@@ -1,4 +1,4 @@
-<div class="carousel" (click)="navigateToShoppingCart()">
+<div class="carousel">
   <mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'">
     <mdb-carousel-item>
       <img
@@ -36,9 +36,15 @@
   </mdb-carousel>
 </div>
 
+<app-navbar></app-navbar>
 
+<div>
+  <div class="box-list">
+    <app-item-card *ngFor="let item of this.cartService.listItem" [item] = "item"></app-item-card>
+  </div>
+</div>
   
 
-   <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 
    
