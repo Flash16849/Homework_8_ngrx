@@ -1,12 +1,13 @@
 <form [formGroup]="myForm">
+  <h3>Thêm Sản Phẩm</h3>
   <label for="name">Name: </label>
   <input type="text" [formControl]="name">
 
   <label for="price">Price: </label>
   <input type="number" [formControl]="price">
   
-  <label for="quantity">Quantity: </label>
-  <input type="number" [formControl]="quantity">
+  <label for="instock">Instock: </label>
+  <input type="number" [formControl]="instock">
   
   <label for="img">ImgURL: </label>
   <input type="string" [formControl]="img">

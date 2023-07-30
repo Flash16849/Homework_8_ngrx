@@ -1,0 +1,16 @@
+.container{
+    width: 500px;
+    height: 900px;
+}
+
+.box-list{
+    padding: 5%;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.box-list img{
+    width: 150px;
+}
+

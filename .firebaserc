@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "first-project-824cc": {
+      "hosting": {
+        "firstProject": [
+          "first-project-824cc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "first-project-824cc"
+  }
+}

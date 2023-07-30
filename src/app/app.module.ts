@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from './shared/shared/shared.module';
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
@@ -22,12 +21,16 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    // NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,9 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
   exports:[
   ],

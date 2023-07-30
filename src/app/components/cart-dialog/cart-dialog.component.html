@@ -1,0 +1,22 @@
+<div class="container">
+    <button class="close-button" (click)="close()">X</button>
+
+
+    
+    <div class="box-list" *ngFor="let item of carts">
+        <div class="product">
+            <img src={{item.img}}>
+            <button (click)="deleteP(item)">x</button>
+            <p>{{item.name}}</p>
+            <p>Giá tiền: {{item.price}}</p>
+            <p>Số lượng: {{item.quantity}}
+                <button (click)="this.cartService.reduceItem(item)">-</button>
+                <button style="margin-left: 1%;" (click)="this.cartService.addItem(item)">+</button>
+            </p>
+        </div>
+    </div>
+
+    <div >
+        <p class="total">Total: ${{total().toFixed(2)}}</p>
+    </div>
+</div>

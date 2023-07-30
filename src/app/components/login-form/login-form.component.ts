@@ -9,7 +9,6 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class LoginFormComponent {
 
-  // listItem: Item[] = [];
 
   constructor(public cartService: CartService) {
     
@@ -21,21 +20,21 @@ export class LoginFormComponent {
   myForm: FormGroup = new FormGroup({});
   name: FormControl = new FormControl('');
   price: FormControl = new FormControl('');
+  instock: FormControl = new FormControl('');
   quantity: FormControl = new FormControl('');
   img: FormControl = new FormControl('');
   description: FormControl = new FormControl('');
 
   submit(){
     let newItem: Item = {
-      
+      id: String(this.cartService.listItem.length + 1),
       name: this.name.value,
       price: this.price.value,
+      instock: this.instock.value,
       quantity: this.quantity.value,
       img: this.img.value,
       description: this.description.value
     }
-    this.cartService.listItem.push(newItem);
-    console.log(this.cartService.listItem);
-    
+    this.cartService.submit(newItem);
   }
 }

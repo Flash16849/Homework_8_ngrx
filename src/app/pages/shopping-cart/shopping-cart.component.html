@@ -1,10 +1,16 @@
+
+<app-navbar (openD)="showDialog()"></app-navbar>
+
 <div class="container">
   
+  <div class="box-list">
+    <app-item-card  *ngFor="let item of this.cartService.listItem" [item]="item" (themHang)="addCart(item)"></app-item-card>
+  </div>
+
   <app-login-form></app-login-form>
 
-  <div class="box-list">
-    <app-item-card
-      *ngFor="let item of this.cartService.listItem" [item]="item">
-    </app-item-card>
-  </div>
+  <dialog #cart>
+    <app-cart-dialog  [carts]="carts" (closeD)="close()"></app-cart-dialog>
+  </dialog>
+
 </div>

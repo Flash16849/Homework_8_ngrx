@@ -5,14 +5,15 @@ import { LoginFormComponent } from 'src/app/components/login-form/login-form.com
 import { ItemCardComponent } from 'src/app/components/item-card/item-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
+import { CartDialogComponent } from 'src/app/components/cart-dialog/cart-dialog.component';
 
 @NgModule({
-  declarations: [LoginFormComponent,ItemCardComponent],
+  declarations: [LoginFormComponent,ItemCardComponent, CartDialogComponent],
   imports: [
     CommonModule,
     MdbCarouselModule,
     ReactiveFormsModule,
-    NavbarComponent
+    NavbarComponent,
   ],
   exports:[
     CommonModule,
@@ -20,7 +21,8 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
     ReactiveFormsModule,
     LoginFormComponent,
     ItemCardComponent,
-    NavbarComponent
+    NavbarComponent,
+    CartDialogComponent
   ]
 })
 export class SharedModule { }

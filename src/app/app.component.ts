@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Item } from './models/item.model';
-import { CartService } from './services/cart.service';
+
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,7 @@ import { CartService } from './services/cart.service';
 export class AppComponent {
   title = 'firstProject';
 
-  constructor(public cartService: CartService) {
-    this.cartService.showData();
+  constructor() {
   }
 
   // carts: Item[] = [];

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from 'src/app/models/item.model';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -9,8 +9,15 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ItemCardComponent{
   constructor(public cartService: CartService) { }
-  @Input()
+  @Input() item!: Item;
+  @Output() themHang = new EventEmitter;
 
-  item!: Item;
+  addToCart(){
+    this.themHang.emit();
+  }
   
+  // add(){
+  //   this.themHang.emit();
+  // }
+
 }

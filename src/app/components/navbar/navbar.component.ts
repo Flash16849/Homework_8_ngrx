@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
   imports: [MatIconModule],
 })
 export class NavbarComponent {
+  @Output() openD = new EventEmitter();
 
   constructor(public router: Router){}
   
@@ -20,4 +22,10 @@ export class NavbarComponent {
   backToHome(){
     this.router.navigate([''])
   }
+
+  showD(){
+    this.openD.emit();
+    console.log("iiuhiuh");
+  }
 }
+

@@ -17,10 +17,10 @@
               <div class="h-bg-inner"></div>
             </div>
   
-            <a class="cart" href="#">
+            <a class="cart">
               <span class="price">{{item.price}}</span>
               <span class="add-to-cart">
-                <span class="txt">Add in cart</span>
+                 <span class="txt" (click)="addToCart()">Add in cart</span> 
               </span>
             </a>
           </div>

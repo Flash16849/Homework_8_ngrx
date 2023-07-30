@@ -1,0 +1,45 @@
+<div class="carousel">
+    <mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'">
+      <mdb-carousel-item>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0585/8181/1355/files/HEIGHT-PC-EN_1500x.webp?v=1690183996"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0585/8181/1355/files/MELLOW_PC_EN_0c8cf67f-58a0-445e-826b-8e2b9338845f_1500x.jpg?v=1689912510"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0585/8181/1355/files/BARBIE_PC_EN_1500x.jpg?v=1688973654"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </div>
+  
+  <app-navbar></app-navbar>
+  
+  <div>
+    <div class="box-list">
+      <app-item-card *ngFor="let item of this.cartService.listItem" [item] = "item"></app-item-card>
+    </div>
+  </div>

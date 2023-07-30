@@ -3,13 +3,21 @@
 form {
     display: grid;
     justify-content: center;
+    border-style: solid;
+    border-color: black;
+    border-width: unset;
+    border-radius: 5%;
+    padding-top: 6%;
+    padding-bottom: 6%;
 }
 
 form > * {
     width: 200px;
 }
 
-// img {
-//     width: 25px;
-//     margin-left: 1.5%;
-// }
+button{
+    margin-top: 4%;
+    padding: 1%;
+    background-color: black;
+    color: white;
+}
