@@ -1,0 +1,28 @@
+<div class="container">
+    <button class="close-button" (click)="close()">X</button>
+    
+    <div class="box-list" *ngFor="let item of this.cartService.listItem">
+        
+        <label for="name">Name: {{item.name}}</label>
+        <input type="text" [formControl]="name">
+
+        <label for="price">Price: {{item.price}}</label>
+        <input type="number" [formControl]="price">
+        
+        <label for="instock">Instock: {{item.instock}}</label>
+        <input type="number" [formControl]="instock">
+        
+        <label for="img">ImgURL: {{item.img}}</label>
+        <input type="string" [formControl]="img">
+
+        <label for="img2">Img2URL: {{item.img2}}</label>
+        <input type="string" [formControl]="img2">
+        
+        <label for="description">Description: {{item.description}}</label>
+        <textarea type="string" [formControl]="description"></textarea>
+
+        <button type="submit" (click)="modifyItem(item)">Xác nhận</button>
+    </div>
+
+    
+</div>

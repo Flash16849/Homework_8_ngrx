@@ -1,3 +1,5 @@
+
+
 <div class="carousel">
     <mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'">
       <mdb-carousel-item>
@@ -36,10 +38,25 @@
     </mdb-carousel>
   </div>
   
-  <app-navbar></app-navbar>
-  
-  <div>
-    <div class="box-list">
-      <app-item-card *ngFor="let item of this.cartService.listItem" [item] = "item"></app-item-card>
-    </div>
+  <app-navbar (openD)="showDialog()"></app-navbar>
+
+  <div id="collectionBox">
+    <button class="collection">WOMEN</button>
+    <button class="collection">MEN</button>
+    <button class="collection">KIDS</button>
+    <button class="collection">JIBBITZ™ CHARMS</button>
   </div>
+  
+  <div class="container">
+    <div class="box-list">
+      <app-item-card *ngFor="let item of this.cartService.listItem" [item] = "item" (themHang)="addCart(item)"></app-item-card>
+    </div>
+
+    <dialog #cart>
+      <app-cart-dialog  [carts]="carts" (closeD)="close()"></app-cart-dialog>
+    </dialog>
+
+  </div>
+
+
+

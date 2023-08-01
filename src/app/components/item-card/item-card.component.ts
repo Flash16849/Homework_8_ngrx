@@ -8,6 +8,7 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./item-card.component.scss']
 })
 export class ItemCardComponent{
+  a: boolean = false;
   constructor(public cartService: CartService) { }
   @Input() item!: Item;
   @Output() themHang = new EventEmitter;
@@ -15,7 +16,8 @@ export class ItemCardComponent{
   addToCart(){
     this.themHang.emit();
   }
-  
+
+ 
   // add(){
   //   this.themHang.emit();
   // }

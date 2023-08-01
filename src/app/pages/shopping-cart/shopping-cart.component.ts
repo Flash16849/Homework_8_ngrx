@@ -12,16 +12,7 @@ export class ShoppingCartComponent {
 
   constructor(public router: Router,public cartService: CartService){}
 
-  @ViewChild('cart') dialog: ElementRef<HTMLDialogElement> | undefined; 
-  carts: Item[] = [];
-
-  addCart(item: Item){
-    this.cartService.addItem(item);
-    this.carts = this.cartService.cartItem;
-    console.log(this.cartService.cartItem);
-    console.log(this.carts);
-    
-  }
+  @ViewChild('itemModified') dialog: ElementRef<HTMLDialogElement> | undefined; 
 
   showDialog() {
     this.dialog?.nativeElement.showModal();

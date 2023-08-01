@@ -5,5 +5,6 @@ export interface Item {
     instock: number;
     quantity: number;
     img: string;
+    img2: string;
     description: string;
 }

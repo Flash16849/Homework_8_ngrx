@@ -1,19 +1,16 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
-
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  standalone: true,
-  imports: [MatIconModule],
 })
 export class NavbarComponent {
   @Output() openD = new EventEmitter();
 
-  constructor(public router: Router){}
+  constructor(public router: Router, public authService: AuthService){}
   
   navigateToShoppingCart() {
     this.router.navigate(['/shopping-cart'])
@@ -25,7 +22,16 @@ export class NavbarComponent {
 
   showD(){
     this.openD.emit();
-    console.log("iiuhiuh");
   }
+
+  login(){
+    this.authService.logInWGoogle()
+  }
+
+  logout(){
+    this.authService.logOut();
+  }
+
+  
 }
 

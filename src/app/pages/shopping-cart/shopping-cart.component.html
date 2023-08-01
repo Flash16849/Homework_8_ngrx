@@ -1,16 +1,19 @@
 
-<app-navbar (openD)="showDialog()"></app-navbar>
+<app-navbar></app-navbar>
 
 <div class="container">
   
   <div class="box-list">
-    <app-item-card  *ngFor="let item of this.cartService.listItem" [item]="item" (themHang)="addCart(item)"></app-item-card>
+    <app-item-card2  *ngFor="let item of this.cartService.listItem" [item]="item" 
+      (xoaHang)="this.cartService.deleteItemInItemList(item.id)"
+      (capNhat)="showDialog()">
+    </app-item-card2>
   </div>
-
+  
   <app-login-form></app-login-form>
 
-  <dialog #cart>
-    <app-cart-dialog  [carts]="carts" (closeD)="close()"></app-cart-dialog>
+  <dialog #itemModified>
+    <app-item-dialog (closeD)="close()"></app-item-dialog>
   </dialog>
 
 </div>

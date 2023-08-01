@@ -3,17 +3,26 @@ import { CommonModule } from '@angular/common';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { LoginFormComponent } from 'src/app/components/login-form/login-form.component';
 import { ItemCardComponent } from 'src/app/components/item-card/item-card.component';
+import { ItemCard2Component } from 'src/app/components/item-card2/item-card2.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { CartDialogComponent } from 'src/app/components/cart-dialog/cart-dialog.component';
-
+import { MatIconModule } from '@angular/material/icon';
+import { ItemDialogComponent } from 'src/app/components/item-dialog/item-dialog.component';
 @NgModule({
-  declarations: [LoginFormComponent,ItemCardComponent, CartDialogComponent],
+  declarations: [
+    LoginFormComponent,
+    ItemCardComponent,
+    ItemCard2Component,
+    CartDialogComponent,
+    NavbarComponent,
+    ItemDialogComponent
+  ],
   imports: [
     CommonModule,
     MdbCarouselModule,
     ReactiveFormsModule,
-    NavbarComponent,
+    MatIconModule,
   ],
   exports:[
     CommonModule,
@@ -21,8 +30,11 @@ import { CartDialogComponent } from 'src/app/components/cart-dialog/cart-dialog.
     ReactiveFormsModule,
     LoginFormComponent,
     ItemCardComponent,
+    ItemCard2Component,
     NavbarComponent,
-    CartDialogComponent
+    CartDialogComponent,
+    MatIconModule,
+    ItemDialogComponent
   ]
 })
 export class SharedModule { }

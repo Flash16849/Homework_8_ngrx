@@ -1,0 +1,20 @@
+<div class="box" >
+  
+    <span class="card">
+        <span id="modifyButton" (click)="modify()" *ngIf="this.authService.user != null">
+            <button>Modify</button>
+        </span>
+        <span (mouseover) = "a = true" (mouseout)= "a = false">
+        <img *ngIf="a == false" src={{item.img}} style="width: 70%;">
+        <img *ngIf="a == true" src={{item.img2}} style="width: 70%;">
+        </span>
+        <h2>{{item.name}}</h2>
+        <p class="price">{{item.price}}</p>
+        <p>Instock: {{item.instock}}</p>
+        
+        <button (click)="deleteFList()" *ngIf="this.authService.user != null">
+            Delete from list</button>
+    </span>
+  
+  </div>
+  

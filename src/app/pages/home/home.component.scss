@@ -1,10 +1,29 @@
 .container {
-    max-width: 100%;
-    margin: 0;
-    justify-content: center;
-    background-color: red;
-    background-image: linear-gradient(to right, #d7bfd4 , #a9acd2);
+    width: 90%;
+    
 }
+
+#collectionBox{
+  text-align: center;  
+}
+
+.collection{
+    height: 40px;
+    width: 200px;
+    border-color: black;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    margin: 2%;
+    margin-top: 4%;
+}
+
+.collection:hover{
+    border-color: white;
+    background-color: black;
+    color: white;
+}
+
 .box-list{
     padding: 5%;
     display: grid;

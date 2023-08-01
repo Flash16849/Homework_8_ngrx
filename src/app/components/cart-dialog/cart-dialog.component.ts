@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { Item } from 'src/app/models/item.model';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -14,7 +15,10 @@ export class CartDialogComponent {
   
   
   @Output() closeD = new EventEmitter();
+  
   constructor(public cartService: CartService){}
+
+
 
   close() {
     this.closeD.emit();

@@ -1,0 +1,27 @@
+.box-list{
+    display: grid;
+    justify-content: center;
+    border-style: solid;
+    border-color: black;
+    border-width: unset;
+    border-radius: 30px;
+    padding: 6%;
+    margin: 5%;
+}
+.box-list input {
+    margin-bottom: 2%;
+    border-radius: 20px;
+    border-style: solid;
+}
+
+.box-list textarea {
+    border-radius: 20px;
+    border-style: solid;
+}
+
+.box-list button{
+    margin-top: 4%;
+    padding: 1%;
+    background-color: black;
+    color: white;
+}

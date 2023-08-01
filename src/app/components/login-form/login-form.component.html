@@ -11,9 +11,12 @@
   
   <label for="img">ImgURL: </label>
   <input type="string" [formControl]="img">
+
+  <label for="img2">Img2URL: </label>
+  <input type="string" [formControl]="img2">
   
   <label for="description">Description: </label>
   <textarea type="string" [formControl]="description"></textarea>
   
-  <button type="submit" (click)="submit()">Xác nhận</button>
+  <button *ngIf="this.authService.user != null" type="submit" (click)="submit()">Xác nhận</button>
 </form>

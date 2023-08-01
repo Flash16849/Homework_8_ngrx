@@ -1,30 +1,15 @@
-<div class="container page-wrapper">
-    <div class="page-inner">
-      <div class="row">
-        <div class="el-wrapper">
-          <div class="box-up">
-            <img class="img" src={{item.img}} alt="">
-            <div class="img-info">
-              <div class="info-inner">
-                <span class="p-name">{{item.name}}</span>
-                <span class="p-company">{{item.description}}</span>
-              </div>
-            </div>
-          </div>
+<div class="box" >
   
-          <div class="box-down">
-            <div class="h-bg">
-              <div class="h-bg-inner"></div>
-            </div>
-  
-            <a class="cart">
-              <span class="price">{{item.price}}</span>
-              <span class="add-to-cart">
-                 <span class="txt" (click)="addToCart()">Add in cart</span> 
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <span class="card">
+    <span (mouseover) = "a = true" (mouseout)= "a = false">
+      <img *ngIf="a == false" src={{item.img}} style="width: 70%;">
+      <img *ngIf="a == true" src={{item.img2}} style="width: 70%;">
+    </span>
+    <h2>{{item.name}}</h2>
+    <p class="price">{{item.price}}</p>
+    <p>{{item.description}}</p>
+    
+    <button (click)="addToCart()">Add to Cart</button>
+  </span>
+
+</div>

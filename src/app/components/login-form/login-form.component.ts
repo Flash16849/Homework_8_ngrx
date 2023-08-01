@@ -1,6 +1,7 @@
 import { Component, Input} from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
 import { Item } from 'src/app/models/item.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-login-form',
@@ -10,7 +11,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class LoginFormComponent {
 
 
-  constructor(public cartService: CartService) {
+  constructor(public cartService: CartService, protected authService: AuthService) {
     
     this.myForm.addControl('name',this.name);
     this.myForm.addControl('price',this.price);
@@ -23,6 +24,7 @@ export class LoginFormComponent {
   instock: FormControl = new FormControl('');
   quantity: FormControl = new FormControl('');
   img: FormControl = new FormControl('');
+  img2: FormControl = new FormControl('');
   description: FormControl = new FormControl('');
 
   submit(){
@@ -33,6 +35,7 @@ export class LoginFormComponent {
       instock: this.instock.value,
       quantity: this.quantity.value,
       img: this.img.value,
+      img2: this.img2.value,
       description: this.description.value
     }
     this.cartService.submit(newItem);

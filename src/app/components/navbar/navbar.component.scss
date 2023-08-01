@@ -1,15 +1,18 @@
 .navBar{
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 0.8fr 0.2fr;
     padding: 1.5%;
     width: 100%;
     height: auto;
     border-color: black;
     border-style: solid;
     border-width: thin;
+    border-left: none;
+    border-right: none;
 }
 
 #icon{
-    height: 2%;
+    height: auto;
     width: 2%;
     margin-left: 4%;
 }
@@ -19,3 +22,16 @@
     background-color: rgb(201, 201, 201);
 }
 
+.divButton{
+    text-align: right;
+}
+
+.divButton button{
+    margin-top: 3%;
+    margin-left: 5%;
+    height: 40px;
+    width:70px;
+    background-color: white;
+    border-style: ridge;
+    border-radius: 10px;
+}

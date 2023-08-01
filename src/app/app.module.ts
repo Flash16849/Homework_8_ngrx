@@ -25,6 +25,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { StoreModule } from '@ngrx/store';
 
 
 
@@ -57,8 +58,10 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    StoreModule.forRoot({}, {}),
   ],
   exports:[
+    SharedModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
