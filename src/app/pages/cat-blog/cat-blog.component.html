@@ -1,0 +1,6 @@
+<app-navbar></app-navbar>
+
+<div >
+    <app-card *ngFor="let catFact of listFacts$|async" [catFact]="catFact"></app-card>
+</div>
+

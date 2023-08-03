@@ -1,27 +1,41 @@
+.container{
+    width: 300px;
+    height: auto;
+    padding: 5%
+}
+
+
 .box-list{
     display: grid;
-    justify-content: center;
     border-style: solid;
     border-color: black;
     border-width: unset;
     border-radius: 30px;
-    padding: 6%;
-    margin: 5%;
+    width: auto;
+    height: auto;
+    padding: 9%;
 }
+label{
+    padding: 2%;
+}
+
 .box-list input {
+    margin: 3%;
     margin-bottom: 2%;
     border-radius: 20px;
     border-style: solid;
 }
 
 .box-list textarea {
+    margin: 3%;
     border-radius: 20px;
     border-style: solid;
 }
 
 .box-list button{
+    margin: 3%;
     margin-top: 4%;
-    padding: 1%;
     background-color: black;
     color: white;
+    border-radius: 30px;
 }

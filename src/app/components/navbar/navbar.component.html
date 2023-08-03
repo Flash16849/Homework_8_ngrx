@@ -7,6 +7,8 @@
         src="https://camo.githubusercontent.com/b5e66b2fe616886bb21a4808bfb18c14e1c028f0c2a5db5cbe972c0c9cb29ab0/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f313735393739342f313237373639342f30313234646530302d326564392d313165332d386132342d3431346431363639386237332e676966">
         <img id="icon" (click)="showD()"
         src="https://www.iconpacks.net/icons/2/free-shopping-cart-icon-3041-thumb.png">
+        <img id="icon" (click)="this.router.navigate(['/cat-blog'])"
+        src="https://cdn.icon-icons.com/icons2/2787/PNG/512/black_cat_icon_177458.png">
     </div>
     <div class="divButton">
         <button *ngIf="this.authService.user == null" (click)="login()">Login</button>

@@ -6,7 +6,10 @@ import {
   collection,
   collectionData,
   collectionSnapshots,
-  doc, getDoc, setDoc, deleteDoc, query, where, docSnapshots, getDocs, updateDoc } from '@angular/fire/firestore';
+  doc, getDoc, setDoc, deleteDoc, query, where, docSnapshots, getDocs, updateDoc 
+} from '@angular/fire/firestore';
+import { MatDialog } from '@angular/material/dialog';
+import { ItemDialogComponent } from '../components/item-dialog/item-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +19,7 @@ export class CartService {
   cartItem: Item[] = [];
   itemsCollection = collection(this.fireStore, 'items');
   
-  constructor(public fireStore: Firestore) { 
+  constructor(public fireStore: Firestore, public dialog: MatDialog) { 
     this.getData()
     // for(let item of this.itemList){
     //   addDoc(this.itemsCollection, item)
@@ -58,12 +61,7 @@ export class CartService {
     alert(" Đã xóa sản phẩm khỏi danh sách!! ");
   }
 
-  async updateItemList(item: Item){
-    let q = query(this.itemsCollection, where("id", "==", item.id));
-    let a = await getDocs(q);
-    await updateDoc(a.docs[0].ref, {...item});
-    alert(" Đã cập nhật sản phẩm!! ");
-  }
+  
 
   deleteItem(item: Item) {
     for(let i = 0; i<this.cartItem.length; i++){
@@ -108,6 +106,18 @@ export class CartService {
   }
 
 
+  itemTemp!: Item;
+  modify(item: Item){
+    this.dialog.open(ItemDialogComponent);
+    this.itemTemp = item;
+  }
+
+  async updateItemList(item: Item){
+    let q = query(this.itemsCollection, where("id", "==", item.id));
+    let a = await getDocs(q);
+    await updateDoc(a.docs[0].ref, {...item});
+    alert(" Đã cập nhật sản phẩm!! ");
+  }
 
   
 

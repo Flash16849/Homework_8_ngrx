@@ -1,7 +1,7 @@
 <div class="box" >
   
     <span class="card">
-        <span id="modifyButton" (click)="modify()" *ngIf="this.authService.user != null">
+        <span id="modifyButton" (click)="this.cartService.modify(item)" *ngIf="this.authService.user != null">
             <button>Modify</button>
         </span>
         <span (mouseover) = "a = true" (mouseout)= "a = false">

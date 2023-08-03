@@ -1,4 +1,7 @@
 .navBar{
+    // z-index: 999;
+    // position: fixed;
+    background-color: white;
     display: grid;
     grid-template-columns: 0.8fr 0.2fr;
     padding: 1.5%;
@@ -13,7 +16,7 @@
 
 #icon{
     height: auto;
-    width: 2%;
+    width: 2.5%;
     margin-left: 4%;
 }
 

@@ -5,15 +5,14 @@
   
   <div class="box-list">
     <app-item-card2  *ngFor="let item of this.cartService.listItem" [item]="item" 
-      (xoaHang)="this.cartService.deleteItemInItemList(item.id)"
-      (capNhat)="showDialog()">
+      (xoaHang)="this.cartService.deleteItemInItemList(item.id)">
     </app-item-card2>
   </div>
   
   <app-login-form></app-login-form>
 
   <dialog #itemModified>
-    <app-item-dialog (closeD)="close()"></app-item-dialog>
+    <app-item-dialog ></app-item-dialog>
   </dialog>
 
 </div>

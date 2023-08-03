@@ -30,3 +30,33 @@
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
+
+
+.collectionSlide{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+    width: 100%;
+    height: auto;
+}
+
+.collectionSlide img{
+    width: 50;
+    height: 50;
+}
+
+.collectionSlide span{
+    width: 50%;
+    height: 60%;
+    border: none;
+    border-radius: 10px;
+}
+
+.collectionSlide h4{
+    text-align: center;
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    border-radius: 10px;
+
+}

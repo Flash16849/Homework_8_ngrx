@@ -15,13 +15,13 @@ export class ItemCard2Component {
   constructor(public cartService: CartService, protected authService: AuthService) { }
   @Input() item!: Item;
   @Output() xoaHang = new EventEmitter;
-  @Output() capNhat = new EventEmitter;
+  // @Output() capNhat = new EventEmitter;
 
   deleteFList(){
     this.xoaHang.emit();    
   }
 
-  modify(){
-    this.capNhat.emit();    
-  }
+  // modify(){
+  //   this.capNhat.emit();    
+  // }
 }

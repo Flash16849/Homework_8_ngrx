@@ -9,6 +9,10 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { CartDialogComponent } from 'src/app/components/cart-dialog/cart-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ItemDialogComponent } from 'src/app/components/item-dialog/item-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     LoginFormComponent,
@@ -23,6 +27,8 @@ import { ItemDialogComponent } from 'src/app/components/item-dialog/item-dialog.
     MdbCarouselModule,
     ReactiveFormsModule,
     MatIconModule,
+    MatDialogModule,
+    HttpClientModule
   ],
   exports:[
     CommonModule,
@@ -34,7 +40,9 @@ import { ItemDialogComponent } from 'src/app/components/item-dialog/item-dialog.
     NavbarComponent,
     CartDialogComponent,
     MatIconModule,
-    ItemDialogComponent
+    ItemDialogComponent,
+    MatDialogModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

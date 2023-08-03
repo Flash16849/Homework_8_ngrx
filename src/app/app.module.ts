@@ -26,6 +26,9 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { catFacEffect } from 'src/ngrx/effects/cat.effect';
+import { catFactReducer } from 'src/ngrx/reducers/cat.reducer';
 
 
 
@@ -58,7 +61,8 @@ import { StoreModule } from '@ngrx/store';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({catFact: catFactReducer}, {}),
+    EffectsModule.forRoot([catFacEffect]),
   ],
   exports:[
     SharedModule

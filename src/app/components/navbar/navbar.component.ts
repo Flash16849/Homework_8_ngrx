@@ -20,6 +20,7 @@ export class NavbarComponent {
     this.router.navigate([''])
   }
 
+  
   showD(){
     this.openD.emit();
   }
